@@ -1,5 +1,3 @@
-import Icons from "@/components/Icons"
-import Google from '../assets/icons/search.png';
 import { Fragment, ReactElement } from "react";
 import Link from "next/link";
 import AuthLayout from "@/layouts/AuthLayout";
@@ -30,7 +28,7 @@ const SignUp = () => {
                     <button type="submit" className="btn btn-primary w-100 fs-6">Sign Up</button>
                     <p className="text-center pt-3">
                         <span>Already have an account?</span>
-                        <Link href="/auth/login" className="text-green border-0 text-decoration-none">Login</Link>
+                        <Link href="/signin" className="text-green border-0 text-decoration-none">Login</Link>
                     </p>
                 </form>
             </div>

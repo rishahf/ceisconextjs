@@ -1,16 +1,15 @@
-import Icons from "@/components/Icons"
-import Google from '../assets/icons/search.png';
 import { Fragment, ReactElement } from "react";
 import Link from "next/link";
 import AuthLayout from "@/layouts/AuthLayout";
-const Login = () => {
+
+const Signin = () => {
     return (
         <Fragment>
             {/************ Right Side ***********/}
             <div className="p-4 p-md-5">
                 <div className="row">
                     <div className="col-md-12">
-                        <h3 className="text-primary fw-bold">Log In</h3>
+                        <h3 className="text-primary fw-bold">Sign In</h3>
                     </div>
                 </div>
                 <form className="text-start pt-4">
@@ -39,7 +38,7 @@ const Login = () => {
                     <button type="submit" className="btn btn-primary w-100 fs-6">Login</button>
                     <p className="text-center pt-3">
                         <span>Don't have an account?</span>
-                        <Link href="/auth/sign_up" className="text-green border-0 text-decoration-none">Sign Up</Link>
+                        <Link href="/signup" className="text-green border-0 text-decoration-none">Sign Up</Link>
                     </p>
                 </form>
             </div>
@@ -47,7 +46,7 @@ const Login = () => {
     )
 }
 
-Login.getLayout = function getLayout(page: ReactElement) {
+Signin.getLayout = function getLayout(page: ReactElement) {
     return (
         <AuthLayout>
             {page}
@@ -55,4 +54,4 @@ Login.getLayout = function getLayout(page: ReactElement) {
     )
 }
 
-export default Login
+export default Signin
