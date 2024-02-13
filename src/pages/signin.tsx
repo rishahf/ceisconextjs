@@ -2,7 +2,7 @@ import { Fragment, ReactElement } from "react";
 import Link from "next/link";
 import AuthLayout from "@/layouts/AuthLayout";
 
-const Signin = () => {
+const SignIn = () => {
     return (
         <Fragment>
             {/************ Right Side ***********/}
@@ -27,10 +27,10 @@ const Signin = () => {
                         <div className="mb-3 form-check d-flex justify-content-between flex-column flex-sm-row ">
                             <div>
                                 <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
+                                <label className="form-check-label" htmlFor="exampleCheck1">Remember me</label>
                             </div>
                             <div>
-                                <a href="/auth/password/forgot" className="text-decoration-none text-green border-0 fs-6 p-0">Forgot Password?
+                                <a href="/password/forgot" className="text-decoration-none text-green border-0 fs-6 p-0">Forgot Password?
                                 </a>
                             </div>
                         </div>
@@ -46,7 +46,7 @@ const Signin = () => {
     )
 }
 
-Signin.getLayout = function getLayout(page: ReactElement) {
+SignIn.getLayout = function getLayout(page: ReactElement) {
     return (
         <AuthLayout>
             {page}
@@ -54,4 +54,4 @@ Signin.getLayout = function getLayout(page: ReactElement) {
     )
 }
 
-export default Signin
+export default SignIn
