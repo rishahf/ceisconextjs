@@ -1,40 +1,27 @@
 import Head from 'next/head'
-import RootLayout from '@/layouts/RootLayout'
+import RootLayout from 'src/layouts/RootLayout'
 import { ReactElement } from 'react'
-import logo from "../assets/images/logo/logo.svg";
-import Bag2 from "../assets/images/trending-section-bag.png";
-import download from '../assets/images/download.jpeg';
-import download2 from '../assets/images/download (1).jpeg';
-import download3 from '../assets/images/download (2).jpeg';
-import download4 from '../assets/images/download (3).jpeg';
-import download5 from '../assets/images/download (4).jpeg';
-import Icons from '@/components/Icons';
-import Minibag from '../assets/images/trending-section-mini-bag.png';
-import Umbrella from '../assets/images/trending-section-umbrela.png';
-import sweater from "../assets/images/new-arrivals-img-1.png";
-import ProductCard from '@/components/ProductCard';
-import Purse from '../assets/images/trending-section-purse.png';
-import Hoodie from '../assets/images/trending-section-hoddie.png';
-import Cap from '../assets/images/trending-section-cap.png';
-import shorts from "../assets/images/shorts.png";
-import Purse1 from '../assets/images/choose-by-expert-purse.png';
-import Purse2 from '../assets/images/choose-by-expert-purse2.png';
-import Purse3 from '../assets/images/choose-by-expert-purse3.png';
-import Purse4 from '../assets/images/choose-by-expert-purse4.png'
-import Jacket1 from '../assets/images/choose-by-expert-jacket.png';
-import Jacket2 from '../assets/images/choose-by-expert-jacket2.png';
-import Jacket3 from '../assets/images/choose-by-expert-jacket3.png';
-import Jacket4 from '../assets/images/choose-by-expert-jacket4.png';
-import moneyimg from "../assets/images/earn-money.png";
-import Boots from '../assets/images/choose-by-expert-shooes.png';
-import Boots2 from '../assets/images/choose-by-expert-shooes2.png';
-import Boots3 from '../assets/images/choose-by-expert-shooes3.png';
-import Boots4 from '../assets/images/choose-by-expert-shooes4.png';
+import logo from "src/assets/images/logo/logo.svg";
+import Icons from 'src/components/Icons';
+import ProductCard from 'src/components/ProductCard';
+import Purse1 from 'src/assets/images/choose-by-expert-purse.png';
+import Purse2 from 'src/assets/images/choose-by-expert-purse2.png';
+import Purse3 from 'src/assets/images/choose-by-expert-purse3.png';
+import Purse4 from 'src/assets/images/choose-by-expert-purse4.png'
+import Jacket1 from 'src/assets/images/choose-by-expert-jacket.png';
+import Jacket2 from 'src/assets/images/choose-by-expert-jacket2.png';
+import Jacket3 from 'src/assets/images/choose-by-expert-jacket3.png';
+import Jacket4 from 'src/assets/images/choose-by-expert-jacket4.png';
+import moneyimg from "src/assets/images/earn-money.png";
+import Boots from 'src/assets/images/choose-by-expert-shooes.png';
+import Boots2 from 'src/assets/images/choose-by-expert-shooes2.png';
+import Boots3 from 'src/assets/images/choose-by-expert-shooes3.png';
+import Boots4 from 'src/assets/images/choose-by-expert-shooes4.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import Testing from '@/utils/CommonJson';
+import Testing from "src/utils/CommonJson"
 
 
 const Beauty = () => {

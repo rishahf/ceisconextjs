@@ -1,11 +1,11 @@
-import Hoodie from '../assets/images/trending-section-hoddie.png';
-import Cap from '../assets/images/trending-section-cap.png';
-import Bag2 from '../assets/images/trending-section-bag.png';
-import Icons from '@/components/Icons';
-import sweater from "../assets/images/new-arrivals-img-1.png";
-import Purse from '../assets/images/trending-section-purse.png';
+import Hoodie from 'src/assets/images/trending-section-hoddie.png';
+import Cap from 'src/assets/images/trending-section-cap.png';
+import Bag2 from 'src/assets/images/trending-section-bag.png';
+import Icons from 'src/components/Icons';
+import sweater from "src/assets/images/new-arrivals-img-1.png";
+import Purse from 'src/assets/images/trending-section-purse.png';
 import { ReactElement } from 'react';
-import RootLayout from '@/layouts/RootLayout';
+import RootLayout from 'src/layouts/RootLayout';
 const Cart = () => {
     return (
         <>

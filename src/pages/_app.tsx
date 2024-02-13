@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'nprogress/nprogress.css'
-import '@/styles/globals.scss'
+import 'src/styles/globals.scss'
 import { ConfigProvider } from 'antd';
 import React, { Fragment, type ReactElement, type ReactNode } from 'react'
 import type { NextPage } from 'next'
