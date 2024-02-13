@@ -1,15 +1,16 @@
-import Icons from '@/components/Icons';
-import Reviewimg1 from '../assets/images/review-img-1.png';
-import Hero from '../assets/images/blogs-hero-img.avif';
-import Blogimg1 from '@/assets/images/blogs-img-1.avif';
-import Risponse from '../assets/images/latest-news-section-mini-img-1.jpeg';
-import Relatedimg1 from '../assets/images/The-latest-news-section-img-3.jpeg';
-import Relatedimg2 from '../assets/images/blog-related-img.webp';
-import Relatedimg3 from '../assets/images/The-latest-news-section-img-2.jpeg';
-import Relatedimg4 from '../assets/images/The-latest-news-section-img-4.jpeg';
-import TheFooter from '@/components/TheFooter';
+import Icons from 'src/components/Icons';
+import Reviewimg1 from 'src/assets/images/review-img-1.png';
+import img from 'src/assets/images/bag.png'
+import Hero from 'src/assets/images/blogs-hero-img.avif';
+import Blogimg1 from 'src/assets/images/blogs-img-1.avif';
+import Risponse from 'src/assets/images/latest-news-section-mini-img-1.jpeg';
+import Relatedimg1 from 'src/assets/images/The-latest-news-section-img-3.jpeg';
+import Relatedimg2 from 'src/assets/images/blog-related-img.webp';
+import Relatedimg3 from 'src/assets/images/The-latest-news-section-img-2.jpeg';
+import Relatedimg4 from 'src/assets/images/The-latest-news-section-img-4.jpeg';
+import TheFooter from 'src/components/TheFooter';
 import { ReactElement } from 'react';
-import RootLayout from '@/layouts/RootLayout';
+import RootLayout from 'src/layouts/RootLayout';
 import Head from 'next/head'
 const Blogs = () => {
     return (

@@ -1,7 +1,7 @@
 import React, { ReactElement, useRef, useState } from 'react';
 import Head from 'next/head';
 import PrivacyPolicy from "@/assets/images/privacy-policy.jpg";
-import RootLayout from '@/layouts/RootLayout';
+import RootLayout from 'src/layouts/RootLayout';
 const Privacy = () => {
     return (
         <>

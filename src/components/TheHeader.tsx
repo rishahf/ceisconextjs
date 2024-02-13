@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Icons from "./Icons";
-import Logo from "../assets/images/logo/logo.svg";
+import Logo from "src/assets/images/logo/logo.svg";
 import { Fragment } from "react";
 
 export default function TheHeader() {

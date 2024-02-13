@@ -2,9 +2,9 @@ import Icons from "@/components/Icons"
 import RootLayout from "@/layouts/RootLayout"
 import Link from "next/link"
 import { ReactElement } from "react"
-import Hoodie from '../assets/images/trending-section-hoddie.png';
-import Cap from '../assets/images/trending-section-cap.png';
-import Purse from '../assets/images/trending-section-purse.png';
+import Hoodie from 'src/assets/images/trending-section-hoddie.png';
+import Cap from 'src/assets/images/trending-section-cap.png';
+import Purse from 'src/assets/images/trending-section-purse.png';
 import Head from 'next/head'
 
 const Checkout = () => {

@@ -1,5 +1,5 @@
 import Icons from "@/components/Icons"
-import Google from '../assets/icons/search.png';
+import Google from 'src/assets/icons/search.png';
 import { Fragment, ReactElement } from "react";
 import Link from "next/link";
 import AuthLayout from "@/layouts/AuthLayout";

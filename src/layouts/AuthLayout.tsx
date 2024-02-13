@@ -1,6 +1,6 @@
 
 import { Fragment } from "react"
-import Logo from '@/assets/images/logo/logo.svg';
+import Logo from 'src/assets/images/logo/logo.svg';
 import Link from "next/link";
 const AuthLayout = (props: any) => {
     return (

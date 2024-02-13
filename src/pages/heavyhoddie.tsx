@@ -1,29 +1,29 @@
-import Hoddieimg from '@/assets/images/hoddie-img.webp';
-import Hoddiefabric from '@/assets/images/hoddie-fabric.webp';
-import Hoddieneck from '@/assets/images/hoddie-neck.webp';
-import Hoddieback from '@/assets/images/hoodie-back-side.webp';
-import Icons from '@/components/Icons';
-import download from '@/assets/images/download.jpeg';
-import download2 from '@/assets/images/download (1).jpeg';
-import download3 from '@/assets/images/download (2).jpeg';
-import download4 from '@/assets/images/download (3).jpeg';
-import download5 from '@/assets/images/download (4).jpeg';
-import Reviewimg1 from '../assets/images/review-img-1.png';
-import Reviewimg2 from '../assets/images/good-news-section-img3.png';
-import Reviewimg3 from '../assets/images/review-img-2.png';
-import Reviewimg4 from '../assets/images/review-img-3.png';
-import ProductCard from '@/components/ProductCard';
-import sweater from "../assets/images/new-arrivals-img-1.png";
-import bat from "../assets/images/bat.png";
-import shorts from "../assets/images/shorts.png";
-import rope from "../assets/images/rope.png";
+import Hoddieimg from 'src/assets/images/hoddie-img.webp';
+import Hoddiefabric from 'src/assets/images/hoddie-fabric.webp';
+import Hoddieneck from 'src/assets/images/hoddie-neck.webp';
+import Hoddieback from 'src/assets/images/hoodie-back-side.webp';
+import Icons from 'src/components/Icons';
+import download from 'src/assets/images/download.jpeg';
+import download2 from 'src/assets/images/download (1).jpeg';
+import download3 from 'src/assets/images/download (2).jpeg';
+import download4 from 'src/assets/images/download (3).jpeg';
+import download5 from 'src/assets/images/download (4).jpeg';
+import Reviewimg1 from 'src/assets/images/review-img-1.png';
+import Reviewimg2 from 'src/assets/images/good-news-section-img3.png';
+import Reviewimg3 from 'src/assets/images/review-img-2.png';
+import Reviewimg4 from 'src/assets/images/review-img-3.png';
+import ProductCard from 'src/components/ProductCard';
+import sweater from "src/assets/images/new-arrivals-img-1.png";
+import bat from "src/assets/images/bat.png";
+import shorts from "src/assets/images/shorts.png";
+import rope from "src/assets/images/rope.png";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 import { ReactElement } from 'react';
-import RootLayout from '@/layouts/RootLayout';
+import RootLayout from 'src/layouts/RootLayout';
 const HeavyHoodie = () => {
     return (
         <>

@@ -1,5 +1,5 @@
 import Icons from "./Icons";
-import Logo from "../assets/images/logo/logo.svg"
+import Logo from "src/assets/images/logo/logo.svg"
 import Link from "next/link";
 export default function TheFooter() {
     return (

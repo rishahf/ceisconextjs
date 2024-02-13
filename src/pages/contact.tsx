@@ -1,6 +1,6 @@
 import Icons from "@/components/Icons"
-import logo from '../assets/images/logo/logo.svg';
-import moneyimg from '@/assets/images/earn-money.png';
+import logo from 'src/assets/images/logo/logo.svg';
+import moneyimg from 'src/assets/images/earn-money.png';
 import { ReactElement } from "react";
 import RootLayout from "@/layouts/RootLayout";
 const Contact = () => {

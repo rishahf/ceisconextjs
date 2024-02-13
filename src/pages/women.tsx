@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import RootLayout from '@/layouts/RootLayout'
+import RootLayout from 'src/layouts/RootLayout'
 import { ReactElement } from 'react'
-import logo from "../assets/images/logo/logo.svg";
-import moneyimg from "../assets/images/earn-money.png";
+import logo from "src/assets/images/logo/logo.svg";
+import moneyimg from "src/assets/images/earn-money.png";
 const Women = () => {
   return (
     <>

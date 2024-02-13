@@ -1,16 +1,16 @@
 import { Fragment, ReactElement } from "react"
-import Hero from '../assets/images/about-section-hero-img.png';
-import Founderimg1 from '../assets/images/founder-img-1.avif';
-import Founderimg2 from '../assets/images/founder-img-2.avif';
-import Founderimg3 from '../assets/images/founder-img-3.avif';
-import Founderimg4 from '../assets/images/founder-img-4.avif';
-import goodnewsimg1 from '../assets/images/good-news-section-img1.png';
-import goodnewsimg2 from '../assets/images/good-news-section-img2.png';
-import goodnewsimg3 from '../assets/images/good-news-section-img3.png';
-import goodnewsimg4 from '../assets/images/good-news-section-img4.png';
-import goodnewsimg5 from '../assets/images/good-news-section-img5.png';
-import specialoffers from '../assets/images/special offers.png';
-import Icons from '@/components/Icons';
+import Hero from 'src/assets/images/about-section-hero-img.png';
+import Founderimg1 from 'src/assets/images/founder-img-1.avif';
+import Founderimg2 from 'src/assets/images/founder-img-2.avif';
+import Founderimg3 from 'src/assets/images/founder-img-3.avif';
+import Founderimg4 from 'src/assets/images/founder-img-4.avif';
+import goodnewsimg1 from 'src/assets/images/good-news-section-img1.png';
+import goodnewsimg2 from 'src/assets/images/good-news-section-img2.png';
+import goodnewsimg3 from 'src/assets/images/good-news-section-img3.png';
+import goodnewsimg4 from 'src/assets/images/good-news-section-img4.png';
+import goodnewsimg5 from 'src/assets/images/good-news-section-img5.png';
+import specialoffers from 'src/assets/images/special offers.png';
+import Icons from 'src/components/Icons';
 import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
