@@ -9,14 +9,14 @@ import { getMessaging, getToken, isSupported } from "firebase/messaging";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: process.env.FIREBASE_API_KEY,
-    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.FIREBASE_PROJECT_ID,
-    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.FIREBASE_MESSAGE_SENDER_ID,
-    appId: process.env.FIREBASE_APP_ID,
-    measurementId: process.env.FIREBASE_MEASURMENT_ID
-};
+    apiKey: "AIzaSyA7m8j5kkBOyTcsbmlUZBtOjIvCtn3LFHw",
+    authDomain: "fir-creds.firebaseapp.com",
+    projectId: "fir-creds",
+    storageBucket: "fir-creds.appspot.com",
+    messagingSenderId: "343918575162",
+    appId: "1:343918575162:web:099345ad7d869eb239ff03",
+    measurementId: "G-8XFVQHGZCM"
+  };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -28,7 +28,7 @@ export const getFirebaseMessageToken = async () => {
     if (isSupport) {
         const messaging = getMessaging(app);
         try {
-            let tokenId = await getToken(messaging, { vapidKey: process.env.FIREBASE_VAP_ID_KEY, })
+            let tokenId = await getToken(messaging, { vapidKey: "BMqTUqE-Tl5MlkDIHKGt2Fay1KLssd77u5RlyykSUQR5qXdQYUBa-2KsZnfJIBh6JbRy43ZCxi3Ye665aSKeSY0", })
             return { tokenId }
         } catch (error) {
             return { error }

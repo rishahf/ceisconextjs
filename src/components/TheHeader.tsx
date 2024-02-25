@@ -1,9 +1,11 @@
 import Link from "next/link";
 import Icons from "./Icons";
 import Logo from "src/assets/images/logo/logo.svg";
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
+import { GlobalContext } from "@/context/Provider";
 
 export default function TheHeader() {
+  const {userInfo} = useContext(GlobalContext)
   return (
     <Fragment>
       <header className="sticky-top shadow">
@@ -55,12 +57,18 @@ export default function TheHeader() {
 
                 <div className="header-icons d-flex gap-3 justify-content-md-end justify-content-center">
                   <button className="border-0 bg-white"><Icons.Search /></button>
-                  <Link className="text-decoration-none" href={'/account'}>
+
+
+                  {userInfo?.access_token ? <Fragment>
+                  <Link className="text-decoration-none" href={'/account/profile'}>
                     <button className="border-0 bg-white"><Icons.User /></button>
                   </Link>
                   <Link className="text-decoration-none" href={'/cart'}>
                     <button className="border-0 bg-white"><Icons.Cart /></button>
                   </Link>
+                  </Fragment> :  <><Link className="text-decoration-none" href={'/signup'}><button className="border-0 bg-info rounded-2 p-1 ">SIGN UP</button></Link>
+                  <Link className="text-decoration-none" href={'/signin'}><button className="border-0 bg-outline-info rounded-2 p-1 ">SIGN IN</button></Link></>
+                  }
 
                 </div>
               </div>

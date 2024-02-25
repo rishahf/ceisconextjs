@@ -2,7 +2,7 @@ import _superagent, { search } from 'superagent';
 const SuperagentPromise = require('superagent-promise');
 const superagent = SuperagentPromise(_superagent, global.Promise);
 
-export const API_ROOT = process.env.NEXT_PUBLIC_API_URL;
+export const API_ROOT = 'http://localhost:3002/';
 
 const INSTAGRAM_API_ROOT = 'https://graph.instagram.com/'; //live
 
