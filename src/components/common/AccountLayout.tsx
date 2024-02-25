@@ -1,7 +1,10 @@
+import { GlobalContext } from '@/context/Provider'
+import { capitalizeFirstLetter } from '@/utils/henceforthValidations'
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useContext } from 'react'
 
 const AccountLayout = (props: any) => {
+    const {userInfo} = useContext(GlobalContext)
     const router = useRouter()
     return <section className="py-4">
         <div className="container">
@@ -10,8 +13,8 @@ const AccountLayout = (props: any) => {
                     <div className="section-heading text-center text-md-start">
                         <h1 className="fw-semibold text-primary">Account</h1>
                         <p>
-                            Enrico Cole,
-                            <span className="text-secondary"> ciseco@gmail.com · Los Angeles, CA </span>
+                           {capitalizeFirstLetter(userInfo?.name) ?? "N/A"},
+                            <span className="text-secondary"> {userInfo?.email ?? ""} · Los Angeles, CA </span>
                         </p>
                     </div>
                     <hr className="text-secondary" />

@@ -4,14 +4,16 @@ import Payment from '@/components/account/Payment'
 import AccountProfile from '@/components/account/Profile'
 import Wishlist from '@/components/account/WishList'
 import AccountLayout from '@/components/common/AccountLayout'
+import { GlobalContext } from '@/context/Provider'
 import RootLayout from '@/layouts/RootLayout'
 import { useRouter } from 'next/router'
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useContext } from 'react'
 
 const PageTypeUser = () => {
     const router = useRouter()
+    const {userInfo} = useContext(GlobalContext)
     return <>
-        {router.query.type == "profile" && <AccountProfile />}
+        {router.query.type == "profile" && <AccountProfile {...userInfo} />}
         {router.query.type == "wishlist" && <Wishlist />}
         {router.query.type == "orders" && <Orders />}
         {router.query.type == "changepassword" && <Changepassword />}

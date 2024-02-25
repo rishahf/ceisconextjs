@@ -6,7 +6,7 @@ export const API_ROOT = 'http://localhost:3002/';
 
 const INSTAGRAM_API_ROOT = 'https://graph.instagram.com/'; //live
 
-const BUCKET_ROOT = `https://sharedecommerce.nyc3.digitaloceanspaces.com/sharedecommerce/`;
+const BUCKET_ROOT = `https://b2ecom.s3.ap-south-1.amazonaws.com/b2ecom/`;
 
 const API_FILE_ROOT_MEDIUM = `${BUCKET_ROOT}medium/`;
 const API_FILE_ROOT_ORIGINAL = `${BUCKET_ROOT}original/`;
