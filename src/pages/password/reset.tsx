@@ -82,10 +82,10 @@ const ResetPassword = (props: any) => {
             setLoading(true)
             let apiRes = await henceforthApi.Auth.verifyOtp(data)
             setLoading(false)
-            NotificationToast.success(apiRes?.data)
+            // NotificationToast.success(apiRes?.data)
             router.replace({ pathname: '/password/set', query: { unique_code: apiRes?.data?.unique_code } })
         } catch (error: any) {
-            NotificationToast.error(error.response.body.error_description)
+            alert(error.response.body.error_description)
             setOtpError(error.response.body.error_description)
             setLoading(false)
         }

@@ -61,7 +61,7 @@ const SetNewPassword = () => {
             setLoading(true)
             let apiRes = await henceforthApi.Auth.forgotChangePassword(data)
             setLoading(false)
-            NotificationToast.success(apiRes?.data?.message)
+            // NotificationToast.success(apiRes?.data?.message ?? "")
             router.replace('/signin')
         } catch (error: any) {
             NotificationToast.error(error.response.body.error_description)
@@ -113,10 +113,6 @@ const SetNewPassword = () => {
                             {/* invalid-feedback */}
                             {isConfirmPasswordError}
                         </div>
-                    </div>
-                    <div className="mb-4">
-                        <label htmlFor="exampleInputEmail1" className="form-label fw-medium">Confirm Password</label>
-                        <input type="password" className="form-control p-2" placeholder="Enter confirm password" />
                     </div>
                     <button type="submit" className="btn btn-primary w-100 fs-6" disabled={loading}>{loading ? <Spinner /> : "Continue"}</button>
                 </form>
