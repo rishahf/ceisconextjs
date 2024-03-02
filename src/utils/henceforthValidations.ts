@@ -130,19 +130,22 @@ export const capitalizeFirstLetter = (string: any) => {
     return string?.charAt(0)?.toUpperCase() + lower?.slice(1)?.split('_')?.join(' ');
 }
 
-export const uppercaseWords = (str: string) => str?.split("_")?.join(" ")?.toLowerCase()?.replace(/^(.)|\s+(.)/g, c => c?.toUpperCase())
+export const uppercaseWords = (str: string) => {
+    let strr = str?.split("-")?.join("_")
+    return strr?.split("_")?.join(" ")?.toLowerCase()?.replace(/^(.)|\s+(.)/g, c => c?.toUpperCase())
+}
 export const generateRandomString = () => {
     const prefix = 'CR';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     let randomString = prefix;
-  
+
     for (let i = prefix.length; i < 12; i++) {
-      const randomIndex = Math.floor(Math.random() * characters.length);
-      randomString += characters.charAt(randomIndex);
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        randomString += characters.charAt(randomIndex);
     }
-  
+
     return randomString;
-  };
+};
 const henceforthValidations = {
     roundOffCeil,
     stringReplace,

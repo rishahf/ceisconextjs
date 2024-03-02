@@ -64,8 +64,8 @@ export default function TheFooter() {
                         <h6 className="fw-bold m-0 mb-2 text-center text-md-start">Getting Started</h6>
                         <div className="d-flex flex-column align-items-center align-items-md-start">
                             <ul className="d-flex flex-column gap-2 list-unstyled m-0">
-                                <li><Link href="/auth/login" className="text-decoration-none text-secondary fs-14 footer-content-wrapper">Login</Link></li>
-                                <li><Link href="/auth/sign_up" className="text-decoration-none text-secondary fs-14 footer-content-wrapper">Sign Up</Link></li>
+                                <li><Link href="/signin" className="text-decoration-none text-secondary fs-14 footer-content-wrapper">Login</Link></li>
+                                <li><Link href="/signup" className="text-decoration-none text-secondary fs-14 footer-content-wrapper">Sign Up</Link></li>
                             </ul>
                         </div>
                     </div>

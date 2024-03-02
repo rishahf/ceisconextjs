@@ -24,7 +24,7 @@ import 'swiper/css/pagination';
 import Testing from "src/utils/CommonJson"
 
 
-const Beauty = () => {
+const ProductSearch = () => {
     return (
         <>
             <Head>
@@ -391,7 +391,7 @@ const Beauty = () => {
 }
 
 
-Beauty.getLayout = function getLayout(page: ReactElement) {
+ProductSearch.getLayout = function getLayout(page: ReactElement) {
     return (
         <RootLayout>
             {page}
@@ -399,4 +399,4 @@ Beauty.getLayout = function getLayout(page: ReactElement) {
     )
 }
 
-export default Beauty
+export default ProductSearch

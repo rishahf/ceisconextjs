@@ -24,7 +24,7 @@ import 'swiper/css/pagination';
 
 import { ReactElement } from 'react';
 import RootLayout from 'src/layouts/RootLayout';
-const HeavyHoodie = () => {
+const ProductDetailTwo = () => {
     return (
         <>
             <section className="py-4">
@@ -525,13 +525,4 @@ const HeavyHoodie = () => {
         </>
     )
 }
-
-HeavyHoodie.getLayout = function getLayout(page: ReactElement) {
-    return (
-        <RootLayout>
-            {page}
-        </RootLayout>
-    )
-}
-
-export default HeavyHoodie
+export default ProductDetailTwo

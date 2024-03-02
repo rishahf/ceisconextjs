@@ -6,7 +6,9 @@ import sweater from "src/assets/images/new-arrivals-img-1.png";
 import Purse from 'src/assets/images/trending-section-purse.png';
 import { ReactElement } from 'react';
 import RootLayout from 'src/layouts/RootLayout';
-const Cart = () => {
+import { useRouter } from 'next/router';
+const viewCart = () => {
+    const router = useRouter()
     return (
         <>
             <section className="py-4">
@@ -303,7 +305,7 @@ const Cart = () => {
                                     </ul>
                                 </div>
                                 <div className="mt-3">
-                                    <button className="btn btn-primary rounded-pill fs-6 w-100">Checkout</button>
+                                    <button onClick={() => router.replace(`/checkout`)} className="btn btn-primary rounded-pill fs-6 w-100">Checkout</button>
                                     <div className="d-flex gap-2 align-items-center mt-3 justify-content-center">
                                         <Icons.Alert />
                                         <p className="m-0 text-secondary">Learn More <a href={''} className="text-black">Taxes</a> and <a href="" className="text-black"> Shipping </a>information</p>
@@ -317,11 +319,11 @@ const Cart = () => {
         </>
     )
 }
-Cart.getLayout = function getLayout(page: ReactElement) {
+viewCart.getLayout = function getLayout(page: ReactElement) {
     return (
         <RootLayout>
             {page}
         </RootLayout>
     )
 }
-export default Cart
+export default viewCart

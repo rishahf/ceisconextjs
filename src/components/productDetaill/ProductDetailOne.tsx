@@ -26,8 +26,10 @@ import logo from "src/assets/images/logo/logo.svg";
 import { ReactElement } from 'react';
 import RootLayout from 'src/layouts/RootLayout';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
-const Shoes = () => {
+const ProductDetailOne = () => {
+    const router = useRouter()
     return (
         <>
             <Head>
@@ -106,7 +108,7 @@ const Shoes = () => {
                                         <button className='p-0 border-0'>&#43;</button>
                                     </div>
                                     <div className='w-100'>
-                                        <button className='btn btn-primary justify-content-center p-3 d-flex align-items-center gap-1 rounded-pill w-100'>
+                                        <button onClick={() =>  router.push(`/viewcart`)} className='btn btn-primary justify-content-center p-3 d-flex align-items-center gap-1 rounded-pill w-100'>
                                             <Icons.Cart />
                                             <span>Add To Cart</span>
                                         </button>
@@ -497,14 +499,5 @@ const Shoes = () => {
         </>
     )
 }
-
-Shoes.getLayout = function getLayout(page: ReactElement) {
-    return (
-        <RootLayout>
-            {page}
-        </RootLayout>
-    )
-}
-
-export default Shoes
+export default ProductDetailOne
 

@@ -213,7 +213,7 @@ const Home = () => {
               >
                 {/* Slide-1 **********************************************/}
                 <SwiperSlide>
-                  <Link href={"/men"} className='text-decoration-none'>
+                  <Link href={"/product/424/424dfd"} className='text-decoration-none'>
                     {/* card-1 */}
                     <div className='h-100'>
                       <div className="d-flex discover-bg-yellow  discover-hover gap-3bg-yellow p-3 rounded-4 align-items-center">
@@ -229,10 +229,8 @@ const Home = () => {
                     </div>
                   </Link>
                 </SwiperSlide>
-                {/* Slide-2 **********************************************/}
-                <SwiperSlide>
+                {/* <SwiperSlide>
                   <Link href={"/men"} className='text-decoration-none'>
-                    {/* card-2 */}
                     <div className='h-100'>
                       <div className="d-flex gap-3 discover-hover discover-bg-pink  p-3 rounded-4 align-items-center">
                         <div>
@@ -247,10 +245,8 @@ const Home = () => {
                     </div>
                   </Link>
                 </SwiperSlide>
-                {/* Slide-3 **********************************************/}
                 <SwiperSlide>
                   <Link href={"/men"} className='text-decoration-none'>
-                    {/* card-3 */}
                     <div className='h-100'>
                       <div className="d-flex discover-bg-blue discover-hover gap-3 p-3 rounded-4 align-items-center">
                         <div>
@@ -265,10 +261,8 @@ const Home = () => {
                     </div>
                   </Link>
                 </SwiperSlide>
-                {/* Slide-4 **********************************************/}
                 <SwiperSlide>
                   <Link href={"/men"} className='text-decoration-none'>
-                    {/* card-4 */}
                     <div className='h-100'>
                       <div className="d-flex gap-3 discover-bg-blue discover-hover p-3 rounded-4 align-items-center">
                         <div className="">
@@ -282,7 +276,7 @@ const Home = () => {
                       </div>
                     </div>
                   </Link>
-                </SwiperSlide>
+                </SwiperSlide> */}
               </Swiper>
             </div>
           </div>

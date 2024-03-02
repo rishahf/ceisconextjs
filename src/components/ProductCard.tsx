@@ -1,9 +1,11 @@
 import Link from "next/link"
+import { Router, useRouter } from "next/router"
 
 const ProductCard = (props: any) => {
+  const router = useRouter()
   return (
 
-    <div className="card border-0 product-card-wrapper">
+    <div className="card border-0 product-card-wrapper" role="button" onClick={() => router.push(`/shoessss/p/riueiuriue3843/1`)}>
       <div className="card-img product-card position-relative bg-primary text-center">
         <img src={props.outerimg} alt="sweater" className='img-fluid' />
         <div className='product-cart-wrapper pb-3 justify-content-center flex-sm-column flex-xl-row'>
