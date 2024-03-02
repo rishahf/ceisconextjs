@@ -1,7 +1,7 @@
 import React, { Fragment, ReactElement, useContext } from "react";
 import Link from "next/link";
 import AuthLayout from "@/layouts/AuthLayout";
-import henceforthApi from "@/utils/henceforthApi";
+import ceiscoApi from "@/utils/ceiscoApi";
 import { COOKIES_USER_ACCESS_TOKEN } from "@/context/actionTypes";
 import { useRouter } from "next/router";
 import { GlobalContext } from "@/context/Provider";
@@ -74,7 +74,7 @@ const SignIn = () => {
         }
         try {
             setLoading(true)
-            const apiRes = await henceforthApi.Auth.login(items)
+            const apiRes = await ceiscoApi.Auth.login(items)
             const data = apiRes?.data
             const accessToken = data?.access_token
             await loginNow(accessToken, data)
@@ -105,8 +105,8 @@ const SignIn = () => {
     //                 _id: props.user_key,
     //                 language:"ENGLISH",
     //             }
-    //             henceforthApi.setToken(props.access_token)
-    //             const apiRes = await henceforthApi.Auth.loginAsUser(items)
+    //             ceiscoApi.setToken(props.access_token)
+    //             const apiRes = await ceiscoApi.Auth.loginAsUser(items)
     //             const data = apiRes?.data
     //             const accessToken = data?.access_token
     //             await loginNow(accessToken, data)

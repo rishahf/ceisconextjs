@@ -327,7 +327,7 @@ const FILES = {
   imageSmall: (filename: string) => filename?.startsWith('http') ? filename : `${API_FILE_ROOT_SMALL}${filename}`,
 }
 
-const henceforthApi = {
+const ceiscoApi = {
   Order,
   Home,
   Lang,
@@ -356,4 +356,4 @@ const henceforthApi = {
   setToken: (_token?: string) => { token = _token; }
 };
 
-export default henceforthApi
+export default ceiscoApi

@@ -1,5 +1,5 @@
 import { COOKIES_USER_ACCESS_TOKEN } from "src/context/actionTypes"
-import { API_ROOT } from "./henceforthApi"
+import { API_ROOT } from "./ceiscoApi"
 
 export const initialiseLangData = async (cookies: any, id: string, lang: string) => {
     let rowData = {}

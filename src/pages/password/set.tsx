@@ -1,8 +1,8 @@
 import { Spinner } from '@/components/common/BootstrapCompo'
 import { GlobalContext } from '@/context/Provider'
 import AuthLayout from '@/layouts/AuthLayout'
-import henceforthApi from '@/utils/henceforthApi'
-import henceforthValidations from '@/utils/henceforthValidations'
+import ceiscoApi from '@/utils/ceiscoApi'
+import ceiscoValidations from '@/utils/ceiscoValidations'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { Fragment, ReactElement, useState } from 'react'
@@ -19,7 +19,7 @@ const SetNewPassword = () => {
     const [confirmPassword, setConfirmPassword] = useState("")
     const [newPassword, setNewPassword] = useState("")
     const [loading, setLoading] = useState(false)
-    henceforthApi.setToken(userInfo?.access_token)
+    ceiscoApi.setToken(userInfo?.access_token)
 
     const checkPassLenVal = () => {
         setPasswordError("")
@@ -44,7 +44,7 @@ const SetNewPassword = () => {
             setPasswordError("Password must be at least 8 characters")
             return
         }
-        if (!henceforthValidations.strongPassword(newPassword)) {
+        if (!ceiscoValidations.strongPassword(newPassword)) {
             return setPasswordError("Password must contain at least one special character upper case characters lower case characters & numbers")
         }
         if (newPassword !== confirmPassword) {
@@ -59,7 +59,7 @@ const SetNewPassword = () => {
         }
         try {
             setLoading(true)
-            let apiRes = await henceforthApi.Auth.forgotChangePassword(data)
+            let apiRes = await ceiscoApi.Auth.forgotChangePassword(data)
             setLoading(false)
             // NotificationToast.success(apiRes?.data?.message ?? "")
             router.replace('/signin')

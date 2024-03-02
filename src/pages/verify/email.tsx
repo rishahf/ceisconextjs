@@ -5,8 +5,8 @@ import Link from "next/link";
 import AuthLayout from "@/layouts/AuthLayout";
 import { useRouter } from "next/router";
 import { GlobalContext } from "@/context/Provider";
-import henceforthApi from "@/utils/henceforthApi";
-import henceforthValidations from "@/utils/henceforthValidations";
+import ceiscoApi from "@/utils/ceiscoApi";
+import ceiscoValidations from "@/utils/ceiscoValidations";
 import { Spinner } from "@/components/common/BootstrapCompo";
 
 var countdownTimer = null as any;
@@ -23,7 +23,7 @@ const ResetOtpEmail = () => {
         input3: "",
         input4: ""
     })
-    henceforthApi.setToken(userInfo?.access_token)
+    ceiscoApi.setToken(userInfo?.access_token)
 
     let inputRef = useRef<any>(null)
     let inputRef1 = useRef<any>(null)
@@ -32,7 +32,7 @@ const ResetOtpEmail = () => {
     const CodemobileChange = (e: any) => {
         let name = e.target.name;
         let value = e.target.value;
-        if (henceforthValidations.NumberValidation(value)) {
+        if (ceiscoValidations.NumberValidation(value)) {
             setOtp({
                 ...otp,
                 [name]: value
@@ -81,7 +81,7 @@ const ResetOtpEmail = () => {
 
         try {
             setLoading(true)
-            let apiRes = await henceforthApi.Auth.emailVerification(data)
+            let apiRes = await ceiscoApi.Auth.emailVerification(data)
             setUserInfo(apiRes?.data)
             // toast.success(apiRes?.data)
             router.replace(`${userInfo?.phone_no && !userInfo.phone_verified ? "/verify/phone" : "/"}`)
@@ -112,7 +112,7 @@ const ResetOtpEmail = () => {
             language,
         }
         try {
-            let apiRes = await henceforthApi.Auth.resendOtp(items)
+            let apiRes = await ceiscoApi.Auth.resendOtp(items)
             // toast.success(apiRes?.data)
             initialiseInterval()
 

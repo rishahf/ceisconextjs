@@ -4,9 +4,9 @@ import AuthLayout from "@/layouts/AuthLayout";
 import { GlobalContext } from "@/context/Provider";
 import { destroyCookie, setCookie } from "nookies";
 import { useRouter } from "next/router";
-import henceforthValidations from "@/utils/henceforthValidations";
+import ceiscoValidations from "@/utils/ceiscoValidations";
 import { COOKIES_USER_ACCESS_TOKEN } from "@/context/actionTypes";
-import henceforthApi from "@/utils/henceforthApi";
+import ceiscoApi from "@/utils/ceiscoApi";
 import { Spinner } from "@/components/common/BootstrapCompo";
 const SignUp = () => {
 
@@ -68,7 +68,7 @@ const SignUp = () => {
             return setPasswordError("Password must be at least 8 characters")
 
         }
-        if (!henceforthValidations.strongPassword(password)) {
+        if (!ceiscoValidations.strongPassword(password)) {
             return setPasswordError("Password must contain special characters")
         }
         let notificationToken = await requestNotification();
@@ -94,7 +94,7 @@ const SignUp = () => {
                 path: "/",
             });
             setLoading(true)
-            const apiRes = await henceforthApi.Auth.signUp(items)
+            const apiRes = await ceiscoApi.Auth.signUp(items)
             const data = apiRes?.data
             const accessToken = data?.access_token
             if (accessToken) {

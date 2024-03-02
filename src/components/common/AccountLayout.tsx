@@ -1,5 +1,5 @@
 import { GlobalContext } from '@/context/Provider'
-import { capitalizeFirstLetter } from '@/utils/henceforthValidations'
+import { capitalizeFirstLetter } from '@/utils/ceiscoValidations'
 import { useRouter } from 'next/router'
 import React, { useContext } from 'react'
 

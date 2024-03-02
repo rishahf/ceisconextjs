@@ -3,7 +3,7 @@ import Google from 'src/assets/icons/search.png';
 import React, { Fragment, ReactElement, useRef, useState } from "react";
 import Link from "next/link";
 import AuthLayout from "@/layouts/AuthLayout";
-import henceforthApi from "@/utils/henceforthApi";
+import ceiscoApi from "@/utils/ceiscoApi";
 import { GlobalContext } from "@/context/Provider";
 import { useRouter } from "next/router";
 import { Spinner } from "@/components/common/BootstrapCompo";
@@ -24,7 +24,7 @@ const ResetPassword = (props: any) => {
         input3: "",
         input4: ""
     })
-    henceforthApi.setToken(userInfo?.access_token)
+    ceiscoApi.setToken(userInfo?.access_token)
 
 
     let inputRef = useRef<any>(null)
@@ -80,7 +80,7 @@ const ResetPassword = (props: any) => {
         }
         try {
             setLoading(true)
-            let apiRes = await henceforthApi.Auth.verifyOtp(data)
+            let apiRes = await ceiscoApi.Auth.verifyOtp(data)
             setLoading(false)
             // NotificationToast.success(apiRes?.data)
             router.replace({ pathname: '/password/set', query: { unique_code: apiRes?.data?.unique_code } })
@@ -114,7 +114,7 @@ const ResetPassword = (props: any) => {
         }
         try {
             setOptLoading(true)
-            const apiRes = await henceforthApi.Auth.resendOtpForForgotPassword(items)
+            const apiRes = await ceiscoApi.Auth.resendOtpForForgotPassword(items)
             NotificationToast.success(apiRes?.message)
             initialiseInterval()
 

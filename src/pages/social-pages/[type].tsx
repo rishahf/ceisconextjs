@@ -3,7 +3,7 @@ import Head from 'next/head';
 import PrivacyPolicy from "@/assets/images/privacy-policy.jpg";
 import RootLayout from 'src/layouts/RootLayout';
 import { useRouter } from 'next/router';
-import { uppercaseWords } from '@/utils/henceforthValidations';
+import { uppercaseWords } from '@/utils/ceiscoValidations';
 const Privacy = () => {
     const router = useRouter()
     const { type } = router.query

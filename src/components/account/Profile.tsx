@@ -5,7 +5,7 @@ import RootLayout from "@/layouts/RootLayout";
 import AccountLayout from "@/components/common/AccountLayout";
 import { useRouter } from "next/router";
 import { GlobalContext } from "@/context/Provider";
-import henceforthApi from "@/utils/henceforthApi";
+import ceiscoApi from "@/utils/ceiscoApi";
 import { Spinner } from "../common/BootstrapCompo";
 const AccountProfile = (props:any) => {
     console.log(props,'props,,,,profile');
@@ -18,14 +18,14 @@ const AccountProfile = (props:any) => {
         phone: "",
     })
     const [imgLoader, setImgLoader] = useState(false)
-    henceforthApi.setToken(userInfo?.access_token)
+    ceiscoApi.setToken(userInfo?.access_token)
     const PHONE_SLICE = (phoneNo?.value?.dialCode?.length);
     const phone_number = (phoneNo?.phone?.slice(PHONE_SLICE, phoneNo?.phone?.length));
     const handleFile = async (e: any) => {
         let file = e.target.files[0]
         try {
             setImgLoader(true);
-            const fileRes = await henceforthApi.Common.uploadFile('file', file)
+            const fileRes = await ceiscoApi.Common.uploadFile('file', file)
             const profile_pic = fileRes.data.file_name
             setState({
                 ...state,
@@ -65,7 +65,7 @@ const AccountProfile = (props:any) => {
         // }
         try {
             setLoading(true)
-            let apiRes = await henceforthApi.Auth.editProfile(items)
+            let apiRes = await ceiscoApi.Auth.editProfile(items)
             setUserInfo(apiRes.data)
         } catch (error: any) {
             alert(error?.response?.body?.error_description)
@@ -100,7 +100,7 @@ const AccountProfile = (props:any) => {
             <div className="col-lg-2">
                 <div className="d-flex justify-content-center justify-content-lg-start">
                     <div className="account-img-wrapper">
-                        <img src={state?.profile_pic ? henceforthApi.FILES.imageOriginal(state?.profile_pic) : Accountimg.src} alt='accountimg' className="img-fluid" />
+                        <img src={state?.profile_pic ? ceiscoApi.FILES.imageOriginal(state?.profile_pic) : Accountimg.src} alt='accountimg' className="img-fluid" />
                         <div className="choose-file">
                             <button type="button" className="text-center">
                                 <Icons.Image />

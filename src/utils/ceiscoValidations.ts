@@ -146,7 +146,7 @@ export const generateRandomString = () => {
 
     return randomString;
 };
-const henceforthValidations = {
+const ceiscoValidations = {
     roundOffCeil,
     stringReplace,
     email,
@@ -173,4 +173,4 @@ const henceforthValidations = {
     showPrice,
     strongPasswordRegEx
 }
-export default henceforthValidations
+export default ceiscoValidations

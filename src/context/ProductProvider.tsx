@@ -1,5 +1,5 @@
 import React, { createContext, ReactNode, SetStateAction, useState } from 'react'
-import henceforthApi from 'src/utils/henceforthApi';
+import ceiscoApi from '@/utils/ceiscoApi';
 import { ApisListResponse } from 'src/interfaces';
 import { GlobalContext } from './Provider';
 
@@ -25,7 +25,7 @@ function ProductProvider(props: GlobleContextProviderProps) {
     const initialiseCategory = async () => {
         setNestedLoading(true)
         try {
-            const apiRes = await henceforthApi.Common.nested()
+            const apiRes = await ceiscoApi.Common.nested()
             setNested(apiRes)
         } catch (error) {
 

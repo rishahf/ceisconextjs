@@ -8,7 +8,7 @@ import Head from 'next/head';
 import Script from 'next/script';
 import { ReactNode } from 'react';
 import { NextPage } from 'next';
-import henceforthApi, { API_ROOT } from 'src/utils/henceforthApi';
+import ceiscoApi, { API_ROOT } from '@/utils/ceiscoApi';
 import { ApiListResponse as ProductApiList } from 'src/interfaces/Products';
 import { parseCookies, setCookie } from "nookies"
 import { COOKIES_COUPON_CODE, COOKIES_LANGUAGE, COOKIES_USER_ACCESS_TOKEN, MODULE_FOOTER, MODULE_HEADER, MODULE_HOME, MODULE_PROFILE_SIDEBAR, MODULE_SIGNIN } from 'src/context/actionTypes';
@@ -16,8 +16,8 @@ import NProgress from 'nprogress';
 import ProductProvider from 'src/context/ProductProvider';
 import { CouponData } from 'src/interfaces';
 import { Router } from 'next/router';
-import { initLngWithoutAuth } from 'src/utils/henceforthLanguage';
-import henceofrthEnums from 'src/utils/henceofrthEnums';
+import { initLngWithoutAuth } from '@/utils/ceiscoLanguage';
+import ceiscoEnums from '@/utils/ceiscoEnums';
 
 type Page<P = {}> = NextPage<P> & {
   getLayout?: (page: ReactNode, headerKeys: any) => ReactNode;
@@ -53,7 +53,7 @@ const MyApp = ({ Component, pageProps, ...props }: Props) => {
       <title>
         Ceisco | E-commerce platform
       </title>
-      {props?.lang == henceofrthEnums.Language.ARABIC ?
+      {props?.lang == ceiscoEnums.Language.ARABIC ?
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.rtl.min.css" rel="stylesheet" /> :
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" />
       }
@@ -89,7 +89,7 @@ const MyApp = ({ Component, pageProps, ...props }: Props) => {
 
 }
 MyApp.getInitialProps = async (context: any) => {
-  const mainKey = await henceforthApi.Lang.getKeyId()
+  const mainKey = await ceiscoApi.Lang.getKeyId()
   const profileId = mainKey?.data?.find(res => `lang_${res?.name}` == MODULE_PROFILE_SIDEBAR)
   const headerId = mainKey?.data?.find(res => `lang_${res?.name}` == MODULE_HEADER)
   const footerId = mainKey?.data?.find(res => `lang_${res?.name}` == MODULE_FOOTER)
@@ -104,7 +104,7 @@ MyApp.getInitialProps = async (context: any) => {
   const home_banner = await fetch(`${API_ROOT}Homepage/user/banner?language=${'ENGLISH'}&position=TOP`)
   const home_banner_1 = await home_banner?.json()
 
-  const homePromotionCoupon = await henceforthApi.Coupons.home()
+  const homePromotionCoupon = await ceiscoApi.Coupons.home()
   const couponHome = homePromotionCoupon?.data
   const profileKeys = await initLngWithoutAuth(String(profileId?._id), String(langCookie))
   const headerKeys = await initLngWithoutAuth(String(headerId?._id), String(langCookie))
@@ -112,20 +112,20 @@ MyApp.getInitialProps = async (context: any) => {
   const homeKey = await initLngWithoutAuth(String(homeId?._id), String(langCookie))
   const loginKey = await initLngWithoutAuth(String(loginId?._id), String(langCookie))
   try {
-    const mainKey = await henceforthApi.Lang.getKeyId()
+    const mainKey = await ceiscoApi.Lang.getKeyId()
     const dealsRes = await fetch(`${API_ROOT}Homepage/user/deal_of_the_day?limit=6&pagination=0&language=${'ENGLISH'}`)
     const deals_of_the_day = await dealsRes.json()
     const fashionRes = await fetch(`${API_ROOT}Homepage/user/fashion_deals?limit=6&pagination=0&language=${'ENGLISH'}`)
     const fashion_deals = await fashionRes.json()
     const home_banner = await fetch(`${API_ROOT}Homepage/user/banner?language=${'ENGLISH'}&position=TOP`)
     const home_banner_1 = await home_banner?.json()
-    const homePromotionCoupon = await henceforthApi.Coupons.home()
+    const homePromotionCoupon = await ceiscoApi.Coupons.home()
     const couponHome = homePromotionCoupon?.data
     const accessToken = parseCookies(context.ctx)[COOKIES_USER_ACCESS_TOKEN]
     const coupon_enable = parseCookies(context.ctx)[COOKIES_COUPON_CODE]
     if (accessToken) {
-      henceforthApi.setToken(accessToken)
-      let apiRes = await henceforthApi.Auth.profile()
+      ceiscoApi.setToken(accessToken)
+      let apiRes = await ceiscoApi.Auth.profile()
       const user_info = apiRes.data
       return { deals_of_the_day, fashion_deals, user_info, home_banner_1, couponHome, lang, coupon_enable: coupon_enable == "true", mainKey, profileKeys, headerKeys, footerKey, homeKey, loginKey }
     }

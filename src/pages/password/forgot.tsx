@@ -5,7 +5,7 @@ import Link from "next/link";
 import AuthLayout from "@/layouts/AuthLayout";
 import { setCookie } from "nookies";
 import { COOKIES_USER_RESET_EMAIL } from "@/context/actionTypes";
-import henceforthApi from "@/utils/henceforthApi";
+import ceiscoApi from "@/utils/ceiscoApi";
 import { useRouter } from "next/router";
 import { Spinner } from "@/components/common/BootstrapCompo";
 const ForgotPassword = () => {
@@ -30,7 +30,7 @@ const ForgotPassword = () => {
 
         try {
             setLoading(true)
-            const apiRes = await henceforthApi.Auth.resetPassword(items)
+            const apiRes = await ceiscoApi.Auth.resetPassword(items)
             setCookie(this, COOKIES_USER_RESET_EMAIL, email);
             router.replace({ pathname: '/password/reset', query: { unique_code: apiRes?.data?.unique_code, email } })
         } catch (error: any) {

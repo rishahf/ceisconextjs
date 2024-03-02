@@ -1,6 +1,6 @@
 import React, { createContext, ReactNode, SetStateAction, useState } from 'react'
 import { ApiListResponse as ProductApiList } from 'src/interfaces/Products';
-import henceforthApi from 'src/utils/henceforthApi';
+import ceiscoApi from '@/utils/ceiscoApi';
 import { toast, ToastContainer } from "react-toastify";
 import { useRouter } from 'next/router';
 import { destroyCookie, setCookie } from 'nookies';
@@ -9,8 +9,8 @@ import { AddressGlobleState, ApisListResponse, CardGlobleState, CouponData } fro
 import { getAnalytics, logEvent } from 'firebase/analytics';
 import { getFirebaseMessageToken } from 'src/utils/firebase';
 import { ConfigProvider, Button, theme } from 'antd';
-import henceofrthEnums from 'src/utils/henceofrthEnums';
-import { initLngWithoutAuth } from 'src/utils/henceforthLanguage';
+import ceiscoEnums from '@/utils/ceiscoEnums';
+import { initLngWithoutAuth } from '@/utils/ceiscoLanguage';
 import { notification, Space, message } from 'antd';
 type NotificationType = 'success' | 'info' | 'warning' | 'error' | {'title':"", "desc":""};
 
@@ -139,8 +139,8 @@ function GlobalProvider(props: GlobleContextProviderProps) {
     const [userInfo, setUserInfo] = useState(props.user_info)
     const [couponEnable, setCouponEnable] = useState(props.coupon_enable)
     const [language, setLanguage] = useState(props?.lang ? props?.lang : "ENGLISH")
-    henceforthApi.language(language)
-    henceforthApi.setToken(userInfo?.access_token ? userInfo?.access_token : "")
+    ceiscoApi.language(language)
+    ceiscoApi.setToken(userInfo?.access_token ? userInfo?.access_token : "")
     const { defaultAlgorithm, darkAlgorithm } = theme;
     const handleError = (error: any) => NotificationToast.error((typeof error?.response?.body?.error_description === "string") ? error?.response?.body?.error_description : JSON.stringify(error?.response?.body?.error_description))
     const loginWithSocial = async (social_type: string, social_token: string) => {
@@ -155,7 +155,7 @@ function GlobalProvider(props: GlobleContextProviderProps) {
                 if (notificationToken) {
                     items["fcm_token"] = notificationToken;
                 }
-                let apiRes = await henceforthApi.Auth.socialLogin(items)
+                let apiRes = await ceiscoApi.Auth.socialLogin(items)
                 const data = apiRes?.data
                 const accessToken = data?.access_token
                 if (accessToken) {
@@ -220,7 +220,7 @@ function GlobalProvider(props: GlobleContextProviderProps) {
             setLoading(true)
         }
         try {
-            let apiRes = await henceforthApi.Cart.getCart(0, 20)
+            let apiRes = await ceiscoApi.Cart.getCart(0, 20)
             let isAvaliable = apiRes?.data?.data?.find((res:any) => res.product_id?.is_deleted)
             setGlobleCarts({
                 ...globleCarts,
@@ -236,7 +236,7 @@ function GlobalProvider(props: GlobleContextProviderProps) {
     const initialiseAddress = async () => {
         setLoading(true)
         try {
-            let apiRes = await henceforthApi.Address.get()
+            let apiRes = await ceiscoApi.Address.get()
             setGlobleAddresses(apiRes)
         } catch (error: any) {
             if (error.response.body.error == ERROR_UNAUTHORIZED) {
@@ -398,7 +398,7 @@ function GlobalProvider(props: GlobleContextProviderProps) {
                     },
                 }}
             >
-                <div className='h-100 d-flex flex-column' dir={props?.lang == henceofrthEnums.Language.ARABIC ? 'rtl' : ''}>
+                <div className='h-100 d-flex flex-column' dir={props?.lang == ceiscoEnums.Language.ARABIC ? 'rtl' : ''}>
 
                     {props.children}
                 </div>

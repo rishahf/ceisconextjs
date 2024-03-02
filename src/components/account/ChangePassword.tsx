@@ -1,5 +1,5 @@
 import { GlobalContext } from '@/context/Provider';
-import henceforthApi from '@/utils/henceforthApi';
+import ceiscoApi from '@/utils/ceiscoApi';
 import React, { ReactElement, useContext } from 'react'
 import { Spinner } from '../common/BootstrapCompo';
 import { useRouter } from 'next/router';
@@ -51,7 +51,7 @@ const Changepassword = () => {
         try {
             if (confirmPassword === new_password) {
                 setLoading(true)
-                let apiRes = await henceforthApi.Auth.changePassword(items)
+                let apiRes = await ceiscoApi.Auth.changePassword(items)
                 setState({
                     old_password: "",
                     new_password: "",
