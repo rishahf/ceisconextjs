@@ -50,7 +50,7 @@ interface CommonContextType {
     setUserInfo: React.Dispatch<SetStateAction<any>>;
     setLanguage: React.Dispatch<SetStateAction<any>>;
     language: any,
-    deals_of_the_day: ProductApiList,
+    discover_more: ProductApiList,
     home_banner_1: any,
     couponHome: CouponData,
     fashion_deals: ProductApiList,
@@ -94,7 +94,7 @@ export const WalletConnectResource = {
 }
 type GlobleContextProviderProps = {
     children: ReactNode;
-    deals_of_the_day: ApisListResponse,
+    discover_more: ApisListResponse,
     fashion_deals: ProductApiList
     user_info: UserInfo,
     home_banner_1: any,

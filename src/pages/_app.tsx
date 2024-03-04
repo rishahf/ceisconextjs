@@ -25,7 +25,7 @@ type Page<P = {}> = NextPage<P> & {
 
 type Props = AppProps & {
   Component: Page;
-  deals_of_the_day: ProductApiList;
+  discover_more: ProductApiList;
   fashion_deals: ProductApiList;
   user_info: any;
   home_banner_1: any;
@@ -97,8 +97,8 @@ MyApp.getInitialProps = async (context: any) => {
   const loginId = mainKey?.data?.find(res => `lang_${res?.name}` == MODULE_SIGNIN)
   const lang = parseCookies(context.ctx)[COOKIES_LANGUAGE]
   const langCookie = lang ? lang : "ENGLISH"
-  const dealsRes = await fetch(`${API_ROOT}Homepage/user/deal_of_the_day?limit=6&pagination=0&language=${'ENGLISH'}`)
-  const deals_of_the_day = await dealsRes.json()
+  const discoverRes = await fetch(`${API_ROOT}Homepage/user/best_on_ecom?limit=6&pagination=0&language=${'ENGLISH'}`)
+  const discover_more = await discoverRes.json()
   const fashionRes = await fetch(`${API_ROOT}Homepage/user/fashion_deals?limit=6&pagination=0&language=${'ENGLISH'}`)
   const fashion_deals = await fashionRes.json()
   const home_banner = await fetch(`${API_ROOT}Homepage/user/banner?language=${'ENGLISH'}&position=TOP`)
@@ -113,8 +113,8 @@ MyApp.getInitialProps = async (context: any) => {
   const loginKey = await initLngWithoutAuth(String(loginId?._id), String(langCookie))
   try {
     const mainKey = await ceiscoApi.Lang.getKeyId()
-    const dealsRes = await fetch(`${API_ROOT}Homepage/user/deal_of_the_day?limit=6&pagination=0&language=${'ENGLISH'}`)
-    const deals_of_the_day = await dealsRes.json()
+    const discoverRes = await fetch(`${API_ROOT}Homepage/user/best_on_ecom?limit=6&pagination=0&language=${'ENGLISH'}`)
+    const discover_more = await discoverRes.json()
     const fashionRes = await fetch(`${API_ROOT}Homepage/user/fashion_deals?limit=6&pagination=0&language=${'ENGLISH'}`)
     const fashion_deals = await fashionRes.json()
     const home_banner = await fetch(`${API_ROOT}Homepage/user/banner?language=${'ENGLISH'}&position=TOP`)
@@ -127,12 +127,12 @@ MyApp.getInitialProps = async (context: any) => {
       ceiscoApi.setToken(accessToken)
       let apiRes = await ceiscoApi.Auth.profile()
       const user_info = apiRes.data
-      return { deals_of_the_day, fashion_deals, user_info, home_banner_1, couponHome, lang, coupon_enable: coupon_enable == "true", mainKey, profileKeys, headerKeys, footerKey, homeKey, loginKey }
+      return { discover_more, fashion_deals, user_info, home_banner_1, couponHome, lang, coupon_enable: coupon_enable == "true", mainKey, profileKeys, headerKeys, footerKey, homeKey, loginKey }
     }
-    return { deals_of_the_day, fashion_deals, user_info: null, home_banner_1, couponHome, lang, coupon_enable: coupon_enable == "true", mainKey, profileKeys, headerKeys, footerKey, homeKey, loginKey }
+    return { discover_more, fashion_deals, user_info: null, home_banner_1, couponHome, lang, coupon_enable: coupon_enable == "true", mainKey, profileKeys, headerKeys, footerKey, homeKey, loginKey }
 
   } catch (error: any) {
-    return { deals_of_the_day, fashion_deals, home_banner_1, couponHome, user_info: null, coupon_enable: false, profileKeys, headerKeys, footerKey, mainKey, profileId, headerId, footerId, homeKey, loginKey }
+    return { discover_more, fashion_deals, home_banner_1, couponHome, user_info: null, coupon_enable: false, profileKeys, headerKeys, footerKey, mainKey, profileId, headerId, footerId, homeKey, loginKey }
   }
 
 }

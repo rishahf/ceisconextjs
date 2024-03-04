@@ -1,4 +1,4 @@
-import React, { ReactElement, useRef, useState } from 'react';
+import React, { ReactElement, useContext, useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -80,7 +80,14 @@ import goodnewsimg3 from 'src/assets/images/good-news-section-img3.png';
 import goodnewsimg4 from 'src/assets/images/good-news-section-img4.png';
 import goodnewsimg5 from 'src/assets/images/good-news-section-img5.png';
 import RootLayout from 'src/layouts/RootLayout';
+import { GetServerSideProps } from 'next';
+import { COOKIES_USER_ACCESS_TOKEN } from '@/context/actionTypes';
+import ceiscoApi from '@/utils/ceiscoApi';
+import { GlobalContext } from '@/context/Provider';
 const Home = () => {
+  const { discover_more } = useContext(GlobalContext)
+  console.log(discover_more, 'discover_more');
+
   return (
     <>
       <Head>
@@ -212,23 +219,24 @@ const Home = () => {
                 }}
               >
                 {/* Slide-1 **********************************************/}
-                <SwiperSlide>
-                  <Link href={"/product/424/424dfd"} className='text-decoration-none'>
+                {Array.isArray(discover_more?.data?.data) && discover_more?.data?.data.map((res, i) => <SwiperSlide>
+                  <Link href={`/product/${res?.category_id._id}/${res?.subcategory_id?._id}`} className='text-decoration-none'>
                     {/* card-1 */}
                     <div className='h-100'>
                       <div className="d-flex discover-bg-yellow  discover-hover gap-3bg-yellow p-3 rounded-4 align-items-center">
                         <div>
-                          <p className=' text-secondary text-nowrap m-0 pb-2'>Explore New Arrivals</p>
-                          <h6 className='text-primary fw-bold'>Shop the latest from top brands</h6>
+                          <p className=' text-secondary text-nowrap m-0 pb-2'>{res?.title}</p>
+                          <h6 className='text-primary fw-bold'>{res?.sub_title}</h6>
                           <button className=' mt-2 btn-secondary text-secondary rounded-pill shadow'>Show Me All</button>
                         </div>
                         <div className='product-img-wrapper'>
-                          <img src={discover1.src} alt="Discoverimg1" className='img-fluid' />
+                          <img src={ceiscoApi.FILES.imageSmall(res.image)}  alt="Discoverimg1" className='img-fluid mx-3 rounded-5' />
                         </div>
                       </div>
                     </div>
                   </Link>
-                </SwiperSlide>
+                </SwiperSlide>)}
+
                 {/* <SwiperSlide>
                   <Link href={"/men"} className='text-decoration-none'>
                     <div className='h-100'>
@@ -1891,10 +1899,9 @@ const Home = () => {
 
 Home.getLayout = function getLayout(page: ReactElement) {
   return (
-      <RootLayout>
-          {page}
-      </RootLayout>
+    <RootLayout>
+      {page}
+    </RootLayout>
   )
 }
-
 export default Home
